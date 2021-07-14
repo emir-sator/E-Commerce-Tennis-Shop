@@ -5,15 +5,11 @@ import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, handleUpdateCartQty,handleRemoveFromCart,handleEmptyCart }) => {
-    var isEmpty = false;
-    if (cart.line_items !== undefined) {
-        isEmpty = cart.line_items.length === 0;
-    }
 
     const classes = useStyles();
 
     const EmptyCart = () => (
-        <Typography variant="subtitle1">You have no items in your shopping cart, 
+        <Typography variant="subtitle1">You have no items in your shopping cart,{" "} 
             <Link to="/">
                 start adding some
             </Link>!
@@ -37,7 +33,7 @@ const Cart = ({ cart, handleUpdateCartQty,handleRemoveFromCart,handleEmptyCart }
                 <div>
                     <Button className={classes.emptyButton} component={Link} to="/" size="large" type="button" variant="contained" style={{ backgroundColor: "black", color: "white" }}>Go back</Button>
                     <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
-                    <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary" >Checkout</Button>
+                    <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary" >Checkout</Button>
                 </div>
             </div>
         </div>
@@ -45,7 +41,7 @@ const Cart = ({ cart, handleUpdateCartQty,handleRemoveFromCart,handleEmptyCart }
     if (!cart.line_items) {
         return 'Loading...';
     }
-    // style={{marginTop:'100px'}}
+
     return (
         <Container >
             <div className={classes.toolbar} >
