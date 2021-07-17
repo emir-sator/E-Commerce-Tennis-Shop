@@ -22,7 +22,6 @@ const AdressForm = ({ checkoutToken, next }) => {
     const fetchShippingCountries = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
-        console.log(countries);
         setShippingCountries(countries);
         setShippingCountry(Object.keys(countries)[0]);
     }
@@ -37,7 +36,6 @@ const AdressForm = ({ checkoutToken, next }) => {
     const fetchShippingOptions = async (checkoutTokenId, country, stateProvince = null) => {
         const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region: stateProvince });
     
-        console.log(options)
         setShippingOptions(options);
         setShippingOption(options[0].id);
       };
@@ -110,6 +108,7 @@ const AdressForm = ({ checkoutToken, next }) => {
                 </form>
             </FormProvider>
         </div>
+       
     )
 }
 
