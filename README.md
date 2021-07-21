@@ -11,3 +11,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 1. npm install
 
 ## 2. npm start
+
+## You can find stripe test credit cards on the link below 
+
+## https://stripe.com/docs/testing
+
+
