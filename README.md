@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## You can test deployed version on the link below
 
-# tennisshop.netlify.app
+# https://tennisshop.netlify.app
 
 ### or you can test the application locally by entering these two commands in the Terminal below:
 
